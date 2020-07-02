@@ -15,6 +15,7 @@ func init() {
 }
 
 func setup(c *caddy.Controller) error {
+	log.Infof("setup")
 	k8i, err := Parse(c)
 	if err != nil {
 		return plugin.Error(Name(), err)
@@ -32,12 +33,13 @@ func setup(c *caddy.Controller) error {
 		k8i.Next = next
 		return k8i
 	})
-
+	log.Infof("setup success")
 	return nil
 }
 
 // Parse parses multiple kubernetes into a kubernetai
 func Parse(c *caddy.Controller) (*Kubernetai, error) {
+	log.Infof("parse")
 	var k8i = &Kubernetai{
 		autoPathSearch: searchFromResolvConf(),
 		p:              &podHandler{},

@@ -5,6 +5,7 @@ go 1.12
 require (
 	github.com/caddyserver/caddy v1.0.3
 	github.com/coredns/coredns v1.6.5
+	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/miekg/dns v1.1.22
 )
 
